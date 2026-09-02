@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+.upload-page {
+  font-family: "Inter", sans-serif;
+}
+
+.upload-page {
+  height: 100vh;
+  overflow: auto;
+  background: #0b0b0b;
+  color: #fff;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.upload-page__container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.upload-page__title {
+  margin: 0 0 24px;
+}
+
+.upload-page__grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.upload-page__panel {
+  background: #151515;
+  overflow: hidden;
+}
+
+.upload-page__panel-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid #292929;
+  font-weight: 700;
+}
+
+.upload-page__left {
+  min-width: 0;
+}
+
+.upload-page__file {
+  padding: 6px;
+}
+
+.upload-page__video {
+  display: block;
+  width: 100%;
+  height: 440px;
+  object-fit: contain;
+  background: #000;
+}
+
+.upload-page__yolo {
+  min-width: 0;
+  min-height: 550px;
+}
+
+.upload-page__frame-info {
+  padding: 12px 16px;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.upload-page__field {
+  min-width: 0;
+  min-height: 550px;
+}
+
+.field-map {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.field-map__pitch {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 86 / 66;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #176b35 0,
+      #176b35 8%,
+      #196f38 8%,
+      #196f38 16%
+    );
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.field-map__line {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.field-map__line--outer {
+  inset: 0;
+}
+
+.field-map__line--halfway {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+  transform: translateX(-1px);
+}
+
+.field-map__center-circle {
+  position: absolute;
+  width: 22%;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.field-map__center-point {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 50%;
+}
+
+.field-map__penalty-area {
+  position: absolute;
+  top: 21%;
+  height: 58%;
+  width: 18%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-sizing: border-box;
+}
+
+.field-map__penalty-area--left {
+  left: 0;
+  border-left: 0;
+}
+
+.field-map__penalty-area--right {
+  right: 0;
+  border-right: 0;
+}
+
+.field-map__goal-area {
+  position: absolute;
+  top: 35%;
+  height: 30%;
+  width: 7%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-sizing: border-box;
+}
+
+.field-map__goal-area--left {
+  left: 0;
+  border-left: 0;
+}
+
+.field-map__goal-area--right {
+  right: 0;
+  border-right: 0;
+}
+
+.field-map__penalty-point {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border-radius: 50%;
+}
+
+.field-map__penalty-point--left {
+  left: 11%;
+}
+
+.field-map__penalty-point--right {
+  right: 11%;
+}
+
+.field-map__goal {
+  position: absolute;
+  top: 42%;
+  height: 16%;
+  width: 2.5%;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.field-map__goal--left {
+  left: -2px;
+}
+
+.field-map__goal--right {
+  right: -2px;
+}
+
+.field-map__player {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+  z-index: 10;
+  cursor: default;
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.field-map__player--friend {
+  background: #22c55e;
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.6),
+    0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.field-map__player--enemy {
+  background: #ef4444;
+  box-shadow:
+    0 0 10px rgba(239, 68, 68, 0.6),
+    0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.field-map__player--unknown {
+  background: #888888;
+  box-shadow:
+    0 0 10px rgba(180, 167, 143, 0.6),
+    0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.field-map__ball {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  z-index: 20;
+  filter:
+    drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7));
+  cursor: default;
+}
+
+.field-map__legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.field-map__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field-map__legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.field-map__legend-dot--friend {
+  background: #22c55e;
+}
+
+.field-map__legend-dot--enemy {
+  background: #ef4444;
+}
+
+.field-map__legend-dot--unknown {
+  background: #888888;
+}
+
+.field-map__legend-ball {
+  font-size: 13px;
+}
+
+@media (max-width: 1200px) {
+  .upload-page__grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+
+  .upload-page__field {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 800px) {
+  .upload-page {
+    padding: 12px;
+  }
+
+  .upload-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-page__field {
+    grid-column: auto;
+  }
+
+  .field-map__legend {
+    flex-wrap: wrap;
+  }
+}
+
+.upload-page__file {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.upload-page__file-input {
+  display: none;
+}
+
+.upload-page__file-button {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 9px 16px;
+  background: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.upload-page__file-button:hover {
+  background: #3d3d3d;
+}
+
+.upload-page__file-name {
+  min-width: 0;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #888;
+  font-size: 13px;
+}

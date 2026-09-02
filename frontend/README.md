@@ -1,0 +1,1 @@
+Computer vision system for detecting soccer players and visualizing their positions in an interactive 3D stadium.
