@@ -2,6 +2,8 @@
 
 # CV Soccer Situation Viewer
 
+<video src="https://github.com/user-attachments/assets/4bed064c-84ab-4ab0-a69e-68cb9ad9e332" controls width="800"></video>
+
 Computer vision application for converting short football video clips into interactive tactical situations.
 
 The project combines **YOLO object detection**, **color-based player similarity search**, **PostgreSQL + pgvector**, **WebSocket real-time processing**, and interactive tactical visualization.
@@ -139,7 +141,7 @@ These vectors are stored and compared using **pgvector**.
 
 Players with similar color vectors can then be grouped together.
 
-The similarity threshold can be adjusted directly in the interface.
+The cosine similarity threshold can be adjusted directly in the interface.
 
 This allows the user to control how strictly players should be considered visually similar.
 
@@ -165,15 +167,15 @@ Detected objects are projected onto a tactical football field.
 
 Players are displayed using different colors:
 
-- **Teammate**
-- **Opponent**
-- **Unknown**
+- **Teammate** - green
+- **Opponent** - red
+- **Unknown** - gray
 
 Movement directions are displayed using arrows.
 
 The ball is displayed separately.
 
-After the groups have been assigned, the tactical situation can be saved and opened in the Viewer.
+After the groups have been assigned, the tactical situation can be saved and opened in the 3D Viewer.
 
 ---
 
@@ -182,15 +184,6 @@ After the groups have been assigned, the tactical situation can be saved and ope
 The project is designed to run using **Docker** and **Docker Compose**.
 
 No local Python or Node.js installation is required for the main application workflow.
-
-You need:
-
-- Docker
-- Docker Compose
-
-The default Docker configuration runs YOLO inference using the **CPU**.
-
-GPU acceleration is not configured in the default Docker Compose setup.
 
 ---
 
@@ -262,74 +255,6 @@ http://localhost:5173
 
 Backend:
 http://localhost:8000
-```
-
----
-
-## Useful Docker Commands
-
-Start the application:
-
-```bash
-docker compose up
-```
-
-Start and rebuild containers:
-
-```bash
-docker compose up --build
-```
-
-Start in detached mode:
-
-```bash
-docker compose up --build -d
-```
-
-Stop the application:
-
-```bash
-docker compose down
-```
-
-Restart the frontend:
-
-```bash
-docker compose restart frontend
-```
-
-Restart the backend:
-
-```bash
-docker compose restart backend
-```
-
-Restart PostgreSQL:
-
-```bash
-docker compose restart postgres
-```
-
-Rebuild a specific service:
-
-```bash
-docker compose build frontend
-```
-
-```bash
-docker compose build backend
-```
-
-View logs:
-
-```bash
-docker compose logs -f
-```
-
-View backend logs:
-
-```bash
-docker compose logs -f backend
 ```
 
 ---
