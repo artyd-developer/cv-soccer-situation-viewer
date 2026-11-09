@@ -2,7 +2,7 @@
 
 # CV Soccer Situation Viewer
 
-<video src="https://github.com/user-attachments/assets/4bed064c-84ab-4ab0-a69e-68cb9ad9e332" controls width="800"></video>
+https://github.com/user-attachments/assets/4bed064c-84ab-4ab0-a69e-68cb9ad9e332
 
 Computer vision application for converting short football video clips into interactive tactical situations.
 
